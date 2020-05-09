@@ -83,7 +83,7 @@ KubeFATE部署:
 
 FATE提供了名为 fate-flow
 的工具用来跟踪组件输出模型或日志。fate-flow的部署和使用可以在
-`这里 <./fate_flow/README.rst>`__ 找到。
+`这里 <./FATE-Flow/README.rst>`__ 找到。
 
 文档资料
 --------
