@@ -16,7 +16,7 @@ FATE中的联邦学习算法
 --------------------
 
 FATE目前支持三种类型联邦学习算法：横向联邦学习、纵向联邦学习以及迁移学习。算法细节请参考文档
-`federatedml <./federatedml>`__ 。
+`federatedml <./Federatedml>`__ 。
 
 安装教程
 --------
@@ -35,14 +35,14 @@ Native部署
 
 FATE为开发人员提供了单机部署架构版本。单机部署版本可以帮助开发人员快速开发以及测试FATE。该版本支持两种类型：1）Docker；2）手动编译。
 
-具体细节请参阅单机部署指南：\ `standalone-deploy <./standalone-deploy/>`__\ 。
+具体细节请参阅单机部署指南：\ `standalone-deploy <./部署/FATE单机版部署指南/>`__\ 。
 
 集群部署
 ''''''''
 
 FATE同样为大数据场景提供了分布式运行部署架构版本。从单机部署迁移到集群部署仅需要更改配置文件，不需要更改算法。
 
-具体细节请参阅集群部署指南：\ `cluster-deploy <./cluster-deploy>`__\ 。
+具体细节请参阅集群部署指南：\ `cluster-deploy <./FATE-Cluster-step-by-step部署指南>`__\ 。
 
 KubeFATE部署:
 ~~~~~~~~~~~~~

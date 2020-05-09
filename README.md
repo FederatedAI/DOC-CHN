@@ -1,7 +1,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![CodeStyle](https://img.shields.io/badge/Check%20Style-Google-brightgreen)](https://checkstyle.sourceforge.io/google_style.html) [![Style](https://img.shields.io/badge/Check%20Style-Black-black)](https://checkstyle.sourceforge.io/google_style.html)
 
 <div align="center">
-  <img src="./doc/images/FATE_logo.png">
+  <img src="./images/FATE_logo.png">
 </div>
 
 [DOC](./doc) | [Quick Start](./examples/federatedml-1.x-examples) | [English](./README.md)
