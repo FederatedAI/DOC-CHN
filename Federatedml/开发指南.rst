@@ -1,8 +1,5 @@
 开发指南
 ============
-[`ENG`_]
-
-.. _ENG: develop_guide.rst
 
 为 FATE 开发可运行的算法模块
 -------------------------------
@@ -37,7 +34,7 @@ b. 参数类的 `__init__` 方法应该指定模块使用的所有参数。
 
 c. 重载 BaseParam 的参数检查接口，否则将会抛出未实现的错误。检查方法被用于验证参数变量是否可用。
 
-以 hetero lr 的参数对象为例，python文件为:download:`federatedml/param/logistic_regression_param.py <../federatedml/param/logistic_regression_param.py>`
+以 hetero lr 的参数对象为例，python文件为:download:`federatedml/param/logistic_regression_param.py <https://github.com/FederatedAI/FATE/blob/develop-1.4/federatedml/param/logistic_regression_param.py>`
 
 首先，它继承自 BaseParam：
 
@@ -126,7 +123,7 @@ b. 设置 conf.json 的字段规范。
 
        另外，如果该模块不需要联邦，即各方都可以启动同一个程序文件，那么 `"guest | host | arbiter"` 可以作为定义角色密钥的另一种方法。
 
-也可以用 hetero-lr 来说明，您可以在 :download:`federatedml/conf/setting_conf/HeteroLR.json <../federatedml/conf/setting_conf/HeteroLR.json>` 中找到它。
+也可以用 hetero-lr 来说明，您可以在 `federatedml/conf/setting_conf/HeteroLR.json` 中找到它。
 
 .. code-block:: json
 
@@ -151,7 +148,7 @@ b. 设置 conf.json 的字段规范。
         }
     }
 
-我们来看一下在 HeteroLR.json 里上面这部分内容：HeteroLR 是一个联邦模块，它的Guest程序在 `federatedml/logistic_regression/hetero_logistic_regression/hetero_lr_guest.py` 中定义，并且 HeteroLRGuest 是一个Guest类对象，对于Host和Arbiter类对象也有类似的定义。fate_flow 会结合 module_path 和角色程序来运行该模块。"param_class" 指在 `federatedml/param/logistic_regression_param.py` 中定义了 HeteroLR 的参数类对象，并且类名称为 LogisticParam。默认的运行时配置文件位于 :download:`federatedml/param/logistic_regression_param.py <../federatedml/param/logistic_regression_param.py>` 中。
+我们来看一下在 HeteroLR.json 里上面这部分内容：HeteroLR 是一个联邦模块，它的Guest程序在 `federatedml/logistic_regression/hetero_logistic_regression/hetero_lr_guest.py` 中定义，并且 HeteroLRGuest 是一个Guest类对象，对于Host和Arbiter类对象也有类似的定义。fate_flow 会结合 module_path 和角色程序来运行该模块。"param_class" 指在 `federatedml/param/logistic_regression_param.py` 中定义了 HeteroLR 的参数类对象，并且类名称为 LogisticParam。默认的运行时配置文件位于 `federatedml/param/logistic_regression_param.py` 中。
 
 第三步：定义此模块的默认运行时配置（可选）
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -217,7 +214,7 @@ b. 设置 conf.json 的字段规范。
 
 
 在 json 文件编写完成后，运行 arch/transfer_variables/transfer_variable_generate.py 程序，
-您将在 :download:`arch/transfer_variables/transfer_variable_generate.py <../arch/transfer_variables/transfer_variable_generate.py>` 中获得一个 transfer_variable python 类对象，xxx 是此 json 文件的文件名。
+您将在 `arch/transfer_variables/transfer_variable_generate.py` 中获得一个 transfer_variable python 类对象，xxx 是此 json 文件的文件名。
 
 
 第五步：定义您的模块（应继承 model_base）
@@ -231,7 +228,7 @@ fate_flow_client 模块的运行规则是：
 4. 如果需要，调用 save_data 方法。
 5. 如果需要，调用 export_model 方法。
 
-在本节中，我们讲解如何执行规则 3 至 5 。:download:`federatedml/model_base.py <../federatedml/model_base.py>`.
+在本节中，我们讲解如何执行规则 3 至 5 。`federatedml/model_base.py`.
 
 :在需要时重载 run 接口:
    run 函数具有以下形式。

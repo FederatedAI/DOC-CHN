@@ -1,8 +1,5 @@
 联邦机器学习
 ============
-[`ENG`_]
-
-.. _ENG: README.rst
 
 Federatedml模块包括许多常见机器学习算法联邦化实现。所有模块均采用去耦的模块化方法开发，以增强模块的可扩展性。具体来说，我们提供：
 
@@ -43,7 +40,7 @@ Federatedml模块包括许多常见机器学习算法联邦化实现。所有模
      - DataIO
      - 该组件通常是建模任务的第一个组件。 它将用户上传的数据转换为Instance对象，该对象可用于以下组件。
      - DTable，值为原始数据
-     - 转换后的数据表，值为在 :download:`federatedml/feature/instance.py <feature/instance.py>` 中定义的Data Instance的实例
+     - 转换后的数据表，值为在 `federatedml/feature/instance.py ` 中定义的Data Instance的实例
      - 
      -
 
@@ -193,55 +190,5 @@ Federatedml模块包括许多常见机器学习算法联邦化实现。所有模
 
 
 
-.. _DataIO: util/README.rst
-.. _Intersect: statistic/intersect/README.rst
-.. _Federated Sampling: feature/README.rst
-.. _Feature Scale: feature/README.rst
-.. _Hetero Feature Binning: feature/README.rst
-.. _OneHot Encoder: feature/README.rst
-.. _Hetero Feature Selection: feature/README.rst
-.. _Union: statistic/union/README.rst
-.. _Hetero-LR: linear_model/logistic_regression/README.rst
-.. _Local Baseline: local_baseline/README.rst
-.. _Hetero-LinR: linear_model/linear_regression/README.rst
-.. _Hetero-Poisson: linear_model/poisson_regression/README.rst
-.. _Homo-LR: linear_model/logistic_regression/README.rst
-.. _Homo-NN: nn/homo_nn/README.rst
-.. _Hetero Secure Boosting: tree/README.rst
-.. _Evaluation: evaluation/README.rst
-.. _Hetero Pearson: statistic/correlation/README.rst
-.. _Hetero-NN: nn/hetero_nn/README.rst
-.. _Homo Secure Boosting: tree/README.rst
-
-
-.. toctree::
-   :maxdepth: 2
-
-   util/README
-   statistic/intersect/README
-   feature/README
-   statistic/union/README
-   linear_model/logistic_regression/README
-   local_baseline/README
-   linear_model/linear_regression/README
-   linear_model/poisson_regression/README
-   nn/homo_nn/README
-   tree/README
-   evaluation/README
-   statistic/correlation/README
-   nn/hetero_nn/README
-   model_selection/stepwise/README
-
-
-
-
-安全协议
----------
-
-
-.. toctree::
-   :maxdepth: 2
-
-   secureprotol/README
 
 

@@ -1114,4 +1114,4 @@ mysql              /data/projects/fate/common/mysql/mysql-8.0.13/logs
 8.1 eggroll&fate打包构建
 ------------------------
 
-参见\ `build指导 <../build.md>`__
+参见\ `build指导 <https://github.com/FederatedAI/FATE/blob/develop-1.4/cluster-deploy/build.md>`__

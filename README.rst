@@ -42,7 +42,7 @@ FATE为开发人员提供了单机部署架构版本。单机部署版本可以�
 
 FATE同样为大数据场景提供了分布式运行部署架构版本。从单机部署迁移到集群部署仅需要更改配置文件，不需要更改算法。
 
-具体细节请参阅集群部署指南：\ `cluster-deploy <./FATE-Cluster-step-by-step部署指南>`__\ 。
+具体细节请参阅集群部署指南：\ `cluster-deploy <./部署/FATE-Cluster-step-by-step部署指南.rst>`__\ 。
 
 KubeFATE部署:
 ~~~~~~~~~~~~~
@@ -76,14 +76,14 @@ KubeFATE部署:
 快速开始
 ~~~~~~~~
 
-我们提供了一个用于快速搭建训练任务的python脚本作为示例。该脚本位于：\ `“./examples/federatedml-1.x-examples” <./examples/federatedml-1.x-examples>`__
+我们提供了一个用于快速搭建训练任务的python脚本作为示例。该脚本位于：FATE/examples/federatedml-1.x-examples
 
 获取模型并检查结果
 ~~~~~~~~~~~~~~~~~~
 
 FATE提供了名为 fate-flow
 的工具用来跟踪组件输出模型或日志。fate-flow的部署和使用可以在
-`这里 <./fate_flow/README.md>`__ 找到。
+`这里 <./fate_flow/README.rst>`__ 找到。
 
 文档资料
 --------
@@ -91,15 +91,15 @@ FATE提供了名为 fate-flow
 API 文档
 ~~~~~~~~
 
-FATE在 `doc-api <./doc/api/>`__ 文件夹中提供了API文档，包括 federatedml,
+FATE在 `doc-api <https://github.com/FederatedAI/FATE/tree/develop-1.4/doc/api/>`__ 文件夹中提供了API文档，包括 federatedml,
 eggroll, federation. ### 开发者文档
 如何使用FATE开发联邦学习算法？您可以在
-`develop-guide <./doc/develop_guide.md>`__ 中查看FATE开发指南。
+`开发指南 <./Federatedml/开发指南.rst>`__ 中查看FATE开发指南。
 
 其他文档
 ~~~~~~~~
 
-FATE还在 `doc <./doc/>`__
+FATE还在 `doc <https://github.com/FederatedAI/FATE/tree/develop-1.4/doc/>`__
 中提供了许多其他文档。这些文档可以帮助您更好地了解FATE。
 
 参与到FATE开源社区
