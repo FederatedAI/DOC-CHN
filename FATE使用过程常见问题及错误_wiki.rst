@@ -30,7 +30,7 @@
     | 点击FATE
       boardd的job界面右上角的dashboard，然后看到下面LOG，DEBUG级别的日志里面cluster.py-[linexxxx]
       [REMOTE] /
-      `GET <standalone版本的话的话，cluster.py=%3Estandalone.py>`__
+      [GET] (standalone版本的话的话，cluster.py => standalone.py)
       ，分别表示发送和接受信息。不过board上的DEBUG日志是job级别的，如果要具体到某个组件，如hetero_lr_0，需要到fate_flow_server的部署机器上的logs/:math:`jobid/`\ role/$partyid下看DEBUG.log
 
 10. | **请问有什么方式能够删除一些测试任务占用的存储空间？**
