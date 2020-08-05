@@ -1,7 +1,7 @@
 Windows中利用pycharm连接docker的挂载文件，进而在本地修改FATE代码
 =============
 <br/>
-<br/>
+
 
 # 一、 Docker容器的挂载
 拿FATE单机版（docker部署）举例：https://github.com/FederatedAI/FATE/blob/master/standalone-deploy/doc/Fate-standalone_deployment_guide_zh.md
