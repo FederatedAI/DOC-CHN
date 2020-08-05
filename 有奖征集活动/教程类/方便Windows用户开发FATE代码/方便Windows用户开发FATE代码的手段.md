@@ -7,7 +7,7 @@
 
 ### 1 单机版Docker容器的挂载
 
-拿FATE单机版（docker部署链接为https://github.com/FederatedAI/FATE/blob/master/standalone-deploy/doc/Fate-standalone_deployment_guide_zh.md）举例
+拿FATE单机版举例（docker部署链接为https://github.com/FederatedAI/FATE/blob/master/standalone-deploy/doc/Fate-standalone_deployment_guide_zh.md）
 
 
 
