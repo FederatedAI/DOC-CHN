@@ -6,7 +6,7 @@
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200818181146887.png)
 
 ## 三、上传数据
- ==Guest端：==
+ ==Guest端:==
 * 上传训练集：python fate_flow_client.py -f upload -c examples/upload_try_g.json 
 * upload_try_g.json文件如下：
 
@@ -388,6 +388,7 @@ examples/test_hetero_lr_job_conf.json
 ```
 
 **若页面如图所示，则说明提交成功啦~**
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020081818485575.png#pic_center)
 
 四、查看任务
