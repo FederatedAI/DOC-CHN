@@ -391,84 +391,153 @@ examples/test_hetero_lr_job_conf.json
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020081818485575.png#pic_center)
 
 四、查看任务
+
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200818185038875.png#pic_center)
+
 * 根据Jobid识别任务，可在右侧添加备注（目前1.4.2仅支持英文备注）
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200818185130535.png#pic_center)
+
 ==到达board界面可在上方查看到三方的流程图如下：==
+
 |角色| 对应流程图|
 |:-:| -------------:|
 Guest  | ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020081909183670.png#pic_center)
 Host|![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819092403346.png#pic_center)
 Arbiter|![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819092419782.png#pic_center)
+
 * 点击不同的组件后按==view the outputs==可查看具体的信息
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819092500170.png)
+
 - 查看模型详情：
+
 ==Guest端：== 
+
    * ==点击intersection_0:==
+   
    模型输出中可查看当前的交集样本数以及交集率。
+   
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819093110478.png#pic_center)
-    * ==点击feature_scale_0:==
+
+   * ==点击feature_scale_0:==
+    
     模型输出中可查看特征列表，包括各特征进行归一化后的特征值下限、上限、均值以及标准差。
+    
     ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819093606488.png)
     * ==点击hetero_feature_binning_0:==
-查看自身及各 host 方的特征分箱信息，通过切换 partyid 来查看不同 host 方的特征分箱信息，其中来源于 host 方的特征名及分箱详情均显示**匿名**。特征列表中可查看所有分箱特征的信息，包括特征所属方、特征 iv 值、特征单调性。
+    
+查看自身及各 host 方的特征分箱信息，通过切换 partyid 来查看不同 host 方的特征分箱信息，其中来源于 host 方的特征名及分箱详情均显示**匿名**。
+特征列表中可查看所有分箱特征的信息，包括特征所属方、特征 iv 值、特征单调性。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819093922554.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819095143186.png)
+
 下一张分箱详情表中可根据特征查看具体的分箱，包括各分箱的区间、iv 值、woe 值、正负例样本数和比例:
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819095333252.png)
+
 可视化图：两张图依次为特征分箱区间的样本分布统计图及 woe 统计图。【相比1.3版样式有变】
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020081909553227.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819095606971.png)
+
  * ==点击hetero_feature_selection_0：==
+ 
   可选择查看 guest 方和 host 方的特征选择结果，通过切换 partyid 选择不同的 host 方查看结果，其中各 host 方的特征显示**匿名**。
+  
   如图所示，每一列代表的是一个过滤方法处理后的结果，从左往右为过滤方法执行的先后顺序分别为【用最大最小值的差值来判断是否某一列所有值一致/用设定的IV值判断/变异系数过滤器/按 iv 值排序后，取 iv 值排序最高的百分比阈值。比如，官方默认设定为 0.9，则取最高的 90%的特征。/ 异常值过滤】，深灰色代表不符合所设定的阈值而被过滤的特征，可以通过 data_ouput 来查看最终输出选择后的特征。
+  
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819100553811.png)
+
 -------------------------------------
 >**以上组件相对应的组件_1【即测试集组件】outputs格式与训练集组件相同，故在此仅介绍了组件_0**
 
   * ==点击hetero_lr_0：==
+  
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819092552314.png)
+
 Model output：仅能查看自身的模型信息，包括最大迭代次数、模型是否收敛以及特征权重列表。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819102013878.png)
+
 Data output：查看模型训练后输出的预测标签结果。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819102027223.png)
+
 ==Host端：==
+
 >以下仅列举Host端组件与Guest端组件不同的outputs界面，
 >组件界面展示相同的就不再赘述了哈
+
 * ==点击hetero_feature_binning_0：==
+
 * **Host 方与Guest方不同仅可查看自身的特征分箱信息。**
+
 * 特征列表：可查看自身分箱特征的信息，包括特征显示在 guest 方使用的匿名、特征iv 值、特征单调性。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819102837335.png)
+
 * 分箱详情表：可根据特征查看具体的分箱，包括各分箱的区间、匿名。
+
 **具体的woe和iv值Host方获取不到**
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819104512514.png)
+
 * ==点击hetero_feature_selection_0：==
+
 **与Guest方不同，Host仅可查看自身的特征选择结果**，其中部分过滤器为了保护guest 方的隐私而不显示指标值只显示选择的结果。同样标灰色的表未选择的特征。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819110042531.png)
+
 * ==点击hetero_lr_0：==
+
 Model output：**仅能查看自身的模型信息**，包括最大迭代次数、模型是否收敛以及特征权重列表。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819110448349.png#pic_center)
+
 Data output：**不输出数据**
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020081911050327.png#pic_center)
+
 ==Aribter端：==
+
 * ==点击hetero_lr_0==：
+
 Model output：只可查看 loss 曲线图，除此以外**无法查看 guest 及 host 方相关的其他信息。**
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819110717470.png)
+
 Data output：**不输出数据**
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819110802418.png#pic_center)
+
 ==模型评估：==
+
 * 点击evalution组件:
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819110904349.png)
+
 ==Guest端：==
+
 * 评估指标表可查看模型在各数据集下的 AUC,KS，precision和recall 值、【其中的Quantile可滑动在0-1区间内选择判断正负样本的阈值】混淆矩阵、PSI稳定度指标(population stability index ,PSI)可衡量测试样本及模型开发样本评分的的分布差异，为最常见的模型稳定度评估指标。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819112445781.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819112513777.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819112546792.png)
+
 * 图表区域可选择查看模型在各数据集下的 ROC,K-S，Lift，Gain，PR 和 Accuracy 曲线： 
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819112620379.png)
+
 ==Host端：==
+
 * **查看不到模型指标:**
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819112712350.png#pic_center)
 
