@@ -1,4 +1,4 @@
-﻿## 一、纵向联邦学习背景
+## 一、纵向联邦学习背景
 纵向：GUEST方和HOST方的数据特征维度有差异，但用户（ID）重合度高，适用于跨行业应用的场景。
 ## 二、数据准备
 双方数据规模如下图所示，ID存在重叠，特征不同，guest方为有标签的一方：按7:3比例分割好训练集和测试集共四份数据heterotrain_g.csv/heterotest_g.csv/heterotrain_h.csv/heterotest_h.csv。
@@ -70,7 +70,7 @@ table_name&namespace: 存储数据表的标识符号
     "table_name": "datahh"
   }
 ```
-## 三、提交任务
+## 四、提交任务
 ==Guest端：==
 * 提交训练任务: 
 python fate_flow_client.py -f submit_job -d examples/test_hetero_lr_job_dsl.json -c 
@@ -391,7 +391,7 @@ examples/test_hetero_lr_job_conf.json
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020081818485575.png#pic_center)
 
-四、查看任务
+## 五、查看任务
 
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200818185038875.png#pic_center)
