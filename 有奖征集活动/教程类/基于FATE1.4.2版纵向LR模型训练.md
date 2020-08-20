@@ -426,7 +426,9 @@ Arbiter|![在这里插入图片描述](https://img-blog.csdnimg.cn/2020081909241
     
     模型输出中可查看特征列表，包括各特征进行归一化后的特征值下限、上限、均值以及标准差。
     
-    ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819093606488.png)
+    
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200819093606488.png)
+    
     * ==点击hetero_feature_binning_0:==
     
 查看自身及各 host 方的特征分箱信息，通过切换 partyid 来查看不同 host 方的特征分箱信息，其中来源于 host 方的特征名及分箱详情均显示**匿名**。
