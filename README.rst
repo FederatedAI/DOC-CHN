@@ -118,6 +118,10 @@ FATE还在 `doc <https://github.com/FederatedAI/FATE/tree/develop-1.4/doc/>`__
    requests <https://github.com/WeBankFinTech/FATE/pulls>`__
    提交、贡献代码。
 
+中文文档有奖征集活动
+------------------
+`活动详情 <./有奖征集活动/README.md>`__
+
 License
 ~~~~~~~
 
