@@ -24,13 +24,15 @@
 因为python服务依赖其他所有服务的正常运行，然而第一次启动的时候MySQL需要初始化数据库，python服务的容器会出现几次重启，当MySQL等其他服务都运行正常之后，就可以正常执行了。
 
 ```
+
 既然官方都说了，那就等一会儿呗。
 
 等了足足 10 分钟，`python` 容器还是在无限重启，这肯定是有问题了，于是尝试查看 `python` 容器的日志输出，看看有没有报错。`docker logs -f confs-9999_python_1` 看到确实有错误提示，说是连接 mysql 的 `fate_flow` 库失败。
+
 ![image.png](https://upload-images.jianshu.io/upload_images/7153030-dc8afcc0d1bc423c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
 那就进 mysql 看看吧，在 `confs-9999_mysql_1` 容器中 `show databases` 发现果然没有 `fate_flow` 库。
+
 ![](https://upload-images.jianshu.io/upload_images/7153030-f4039e93998c36d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 尝试重新部署一下，看看 mysql 重新启动能不能将 `fate_flow` 库给初始化出来。
