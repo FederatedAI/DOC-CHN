@@ -1,4 +1,6 @@
-﻿@[TOC](FATE三方的部署经验记录)
+﻿@[TOC](目录)
+ 
+# 1、准备
 
 本篇文章主要记录并分享FATE框架的多方部署经验并尽可能详细，这里的多方以三方为例。部署FATE联邦学习的方法众多，其中最推荐的方法之一是利用Docker Compose进行部署，本文记录利用Docker Compose进行部署的方案。
 
@@ -33,6 +35,7 @@ sudo service docker start
 然后可以检查所有镜像是否载入成功。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200922160546338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29xcW1vb24xMjM=,size_16,color_FFFFFF,t_70#pic_center)
 
+# 2、docker-compose配置
 ***接下来是重点！！***
 找到对应版本的kubefate-docker-compose.tar.gz文件，***一定要确保是对应版本的！！***
 如1.4.2版本的kubefate-docker-compose.tar.gz文件在下图所示位置。
@@ -51,6 +54,8 @@ vim parties.con
 ```
 只需要配置以下内容
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200922162029754.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29xcW1vb24xMjM=,size_16,color_FFFFFF,t_70#pic_center)
+
+# 3、部署
 然后运行生成配置文件的脚本和部署脚本如下
 
 ```
