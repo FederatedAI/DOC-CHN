@@ -8,31 +8,31 @@
 #### 具体过程如下：
 
 ##### 安装 nginx:
-
-`ps -ef|grep nginx`
-`service nginx stop`
-`ps -ef|grep nginx|awk '{print $2}'|xargs kill -9`
-`service nginx stop`
-`yum remove nginx`
-`yum install -y gcc-c++ pcre* openssl*`
-`cd /usr/local/`
-`wget http://nginx.org/download/nginx-1.9.9.tar.gz`
-`tar -zxvf nginx-1.9.9.tar.gz`
-`cd nginx-1.9.9`
-`./configure --prefix=/usr/local/nginx/ --with-http_stub_status_module`
-`--with-http_ssl_module --with-stream --with-stream_ssl_module`
-`make`
-`make install`
-`cd ../nginx`
-`vim ./conf/nginx.conf`
-`./sbin/nginx`
-
+```
+ps -ef|grep nginx
+service nginx stop
+ps -ef|grep nginx|awk '{print $2}'|xargs kill -9
+service nginx stop
+yum remove nginx
+yum install -y gcc-c++ pcre* openssl*
+cd /usr/local/
+wget http://nginx.org/download/nginx-1.9.9.tar.gz
+tar -zxvf nginx-1.9.9.tar.gz
+cd nginx-1.9.9
+./configure --prefix=/usr/local/nginx/ --with-http_stub_status_module
+--with-http_ssl_module --with-stream --with-stream_ssl_module
+make
+make install
+cd ../nginx
+vim ./conf/nginx.conf
+./sbin/nginx
+```
 
 
 #### 附 nginx 配置表
 
 ##### nginx.conf
-
+```
 stream {
     upstream memcached_backend {
         server ${dstip:port} weight=1 max_fails=2 fail_timeout=30s;
@@ -45,6 +45,7 @@ server {
     }
 
 }
+```
 
 ##### 说明:
 
