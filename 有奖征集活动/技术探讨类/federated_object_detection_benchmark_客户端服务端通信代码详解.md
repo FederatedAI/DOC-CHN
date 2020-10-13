@@ -32,7 +32,11 @@ Server通过train_next_round()函数将聚合后的模型传给client，并通�
 
 <img src=https://raw.githubusercontent.com/Catherineylp/federated_object_detection_benchmark_CodeAnalysis/master/8.jpg>
 
-Client收到request_update后通过on_request_update(*args)函数执行本地训练。
+Client收到request_update后先通过register_handles()函数中的on_connect()等函数打印客户端与服务端的连接状态，
+
+<img src=https://raw.githubusercontent.com/Catherineylp/FATE-/master/client_regiter_handle.png>
+
+然后通过on_request_update(*args)函数执行本地训练。
 
 <img src=https://raw.githubusercontent.com/Catherineylp/federated_object_detection_benchmark_CodeAnalysis/master/9.jpg>
 
