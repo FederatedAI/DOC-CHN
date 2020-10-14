@@ -1,4 +1,5 @@
 # FATE部署及其虚拟环境创建
+##本文主要目的是为FATE/research/federated_object_detection_benchmark/代码（对应论文：《Federated-Benchmark: A Benchmark of Real-world Images Dataset for Federated Learning》）搭建虚拟环境，并在虚拟环境中配置pytorch-gpu版本，使得该目录下的代码可以正常执行。
 
 ### 安装EPLE
 ```bash
