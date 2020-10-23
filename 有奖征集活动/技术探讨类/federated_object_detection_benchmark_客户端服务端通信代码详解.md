@@ -7,7 +7,7 @@
 
 # 初始化阶段
 
-## 客户端hanlder注册
+## 客户端handler注册
 Client中__init__()函数中调用register_handlers, 示意图如下, 下图列出了所有在监听的handler
 <img src="https://raw.githubusercontent.com/Catherineylp/federated_object_detection_benchmark_CodeAnalysis/master/aa.png">
 
