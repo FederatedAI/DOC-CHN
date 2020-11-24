@@ -158,7 +158,46 @@ Mac环境下Fate DEV&DEBUG step by step
    ![avatar](./logelp.png)
 
    
-
+### update for 1.5.0
+需要修改默认的配置文件 conf/service_conf.yaml，将第一行
+```
+work_mode: 1
+```
+修改为
+```
+work_mode: 0
+```
+否则会报如下错误
+```
+Traceback (most recent call last):
+  File "/Users/yaocz/code/FATE/python/fate_flow/fate_flow_server.py", line 91, in <module>
+    init_flow_db()
+  File "/Users/yaocz/anaconda3/envs/FATE/lib/python3.7/site-packages/peewee.py", line 393, in inner
+    with self:
+  File "/Users/yaocz/anaconda3/envs/FATE/lib/python3.7/site-packages/peewee.py", line 2724, in __enter__
+    self.db.connect()
+  File "/Users/yaocz/anaconda3/envs/FATE/lib/python3.7/site-packages/playhouse/pool.py", line 108, in connect
+    return super(PooledDatabase, self).connect(reuse_if_open)
+  File "/Users/yaocz/anaconda3/envs/FATE/lib/python3.7/site-packages/peewee.py", line 2820, in connect
+    self._initialize_connection(self._state.conn)
+  File "/Users/yaocz/anaconda3/envs/FATE/lib/python3.7/site-packages/peewee.py", line 2666, in __exit__
+    reraise(new_type, new_type(*exc_args), traceback)
+  File "/Users/yaocz/anaconda3/envs/FATE/lib/python3.7/site-packages/peewee.py", line 179, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/yaocz/anaconda3/envs/FATE/lib/python3.7/site-packages/peewee.py", line 2817, in connect
+    self._state.set_connection(self._connect())
+  File "/Users/yaocz/anaconda3/envs/FATE/lib/python3.7/site-packages/playhouse/pool.py", line 155, in _connect
+    conn = super(PooledDatabase, self)._connect()
+  File "/Users/yaocz/anaconda3/envs/FATE/lib/python3.7/site-packages/peewee.py", line 3642, in _connect
+    conn = mysql.connect(db=self.database, **self.connect_params)
+  File "/Users/yaocz/anaconda3/envs/FATE/lib/python3.7/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/yaocz/anaconda3/envs/FATE/lib/python3.7/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/Users/yaocz/anaconda3/envs/FATE/lib/python3.7/site-packages/pymysql/connections.py", line 630, in connect
+    raise exc
+peewee.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 61] Connection refused)")
+```
 
 
 
