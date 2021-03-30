@@ -6,7 +6,7 @@
 1. | **Q:
      目前FATE采取的是RSA+Hash实现id对齐样本。请问有对齐id+timestamp的方案吗？**
    | A:
-     目前提供的id对齐方案，详情可以参考相关\ `文档 <https://github.com/FederatedAI/FATE/tree/master/federatedml/statistic/intersect>`__\ 。
+     目前提供的id对齐方案，详情可以参考相关\ `文档 <https://github.com/FederatedAI/FATE/tree/master/python/federatedml/statistic/intersect>`__\ 。
      id+timestamp对齐的方案已经在计划中，欢迎关注我们后续版本。
 
 2. | **Q: 我看到Intersect模块报错了，log里面出现“Count of data_instance
@@ -18,4 +18,4 @@
 
 4. | **Q: 关于Intersect有详细的介绍么？**
    | A: 请见
-     `文档 <https://github.com/FederatedAI/FATE/tree/master/federatedml/statistic/intersect>`__
+     `文档 <https://github.com/FederatedAI/FATE/tree/master/python/federatedml/statistic/intersect>`__
