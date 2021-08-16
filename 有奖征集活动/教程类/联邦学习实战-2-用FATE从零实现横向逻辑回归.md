@@ -1,15 +1,3 @@
----
-title: 联邦学习实战-2-用FATE从零实现横向逻辑回归
-tags:
-  - null
-categories:
-  - technical
-  - null
-toc: true
-declare: true
-date: 2021-08-13 16:05:31
----
-
 # 一、安装FATE平台
 
 FATE是微众银行开源的联邦学习框架
@@ -19,8 +7,6 @@ FATE是微众银行开源的联邦学习框架
 > 文档：https://fate.readthedocs.io/en/latest/_build_temp/standalone-deploy/doc/Fate-standalone_deployment_guide_zh.html
 >
 > https://github.com/FederatedAI/Practicing-Federated-Learning/tree/main/chapter05_FATE_HFL
-
-<!-- more -->
 
 > <font color='#e54d42'>注意：书本《联邦学习实战》使用的FATE是1.4.0版本，而我使用的是1.6.0版本（2021-8-13），文中的配置文件中的注释在使用时要去除</font>
 

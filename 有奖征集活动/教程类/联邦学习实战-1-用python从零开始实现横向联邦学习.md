@@ -1,15 +1,3 @@
----
-title: 联邦学习实战-1:用python从零开始实现横向联邦学习
-tags:
-  - null
-categories:
-  - technical
-  - null
-toc: true
-declare: true
-date: 2021-08-08 17:24:50
----
-
 **什么是联邦学习？**
 
 简单来说就是在一个多方的环境中，数据集是零散的（在各个不同的客户端中），那么怎样实现机器学习算法呢？
@@ -25,10 +13,6 @@ date: 2021-08-08 17:24:50
 当然数据隐私方面，联邦学习还将结合**同态加密、安全多方计算、查分隐私**等隐私计算技术实现更安全的保障
 
 （ps：这里只是简单的介绍，详细的内容请多查阅其他资料）
-
-基本概念入门学习见：[《Federated_Machine_Learning:Concept_and_Applications》精读](https://blog.csdn.net/weixin_43988498/article/details/115490939)
-
-<!-- more -->
 
 # 一、环境准备
 
