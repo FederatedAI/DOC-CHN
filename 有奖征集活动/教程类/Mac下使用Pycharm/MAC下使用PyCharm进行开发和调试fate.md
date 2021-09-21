@@ -158,7 +158,82 @@ Mac环境下Fate DEV&DEBUG step by step
    ![avatar](./logelp.png)
 
    
+### update for 1.5.0
 
+依赖等正常安装，主要是从启动fate_flow_server.py开始，会有一些问题
 
+1. 连接MySQL失败
+  直接在pycharm 中run fate_flow_server.py 时，会报如下错误：
+  > peewee.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 61] Connection refused)")
+ 需要修改默认的配置文件 conf/service_conf.yaml，将第一行
+  > work_mode: 1  修改为  work_mode: 0
 
+2. 算法模块寻找入口的方式改动
+ > 从 fate_flow/driver/task_scheduler.py 改为 python/fate_flow/controller/task_controller.py
+ 所需task的启动参数，从fate_flow_schedule.log 中可以获取，也无需再print出来
+ ```
+ [INFO] [2020-11-27 13:41:21,162] [18119:123145447989248] - job_utils.py[line:288]: start process command: /Users/xxx/anaconda3/envs/FATE/bin/python /Users/xxx/code/FATE/python/fate_flow/operation/task_executor.py -j 202011271341197373501 -n dataio_0 -t 202011271341197373501_dataio_0 -v 0 -r guest -p 10000 -c /Users/xxx/code/FATE/jobs/202011271341197373501/guest/10000/dataio_0/202011271341197373501_dataio_0/0/task_parameters.json --run_ip 127.0.0.1 --job_server 127.0.0.1:9380
 
+ ```
+
+3. quick_run.py的调整
+  1.5.0 已经没有quick_run.py了，不过quick_run.py 本质也就四步，upload guest数据，upload host 数据，train， predict。可以通过python命令实现。需要注意下各个json中，数据的目录是否正确
+```
+python python/fate_flow/fate_flow_client.py -f upload -c examples/dsl/v1/upload_data_guest.json -drop 1
+
+python python/fate_flow/fate_flow_client.py -f upload -c examples/dsl/v1/upload_data_host.json-drop 1
+
+python fate_flow_client.py -f submit_job -d examples/dsl/v1/hetero_logistic_regression/test_hetero_lr_train_job_dsl.json -c examples/dsl/v1/hetero_logistic_regression/test_hetero_lr_train_job_conf.json
+
+```
+
+另外，由于pycharm 在run 或者debug 时，会将project 中的Sources 路径加入 PYTHONPATH，所以如果直接使用python 命令执行 fate_flow_client.py 会出现少包的情况，可以在运行python前执行如下命令（推荐，不过每次重启终端，都要加一次），或者加入环境变量
+```
+export PYTHONPATH=$PYTHONPATH:/Users/xxx/xxx/FATE/python
+export PYTHONPATH=$PYTHONPATH:/Users/xxx/xxx/FATE/examples
+```
+
+4. hetero_lr_train_job_conf.json 的调整
+1.4.5版本
+```
+            "cv_param": {
+                "n_splits": 5,
+                "shuffle": false,
+                "random_seed": 103,
+                "need_cv": false,
+                "evaluate_param": {
+                    "eval_type": "binary"
+                }
+            }
+```
+1.5.0版本
+```
+                        "cv_param": {
+                "n_splits": 5,
+                "shuffle": false,
+                "random_seed": 103,
+                "need_cv": false
+                }
+            }
+```
+如使用老版本，会报错：
+```
+fate_flow.utils.dsl_exception.RedundantParameterError: Component hetero_lr_0, module HeteroLR, has redundant parameter evaluate_param
+```
+
+5. 使用task_executor.py 进行debug报错
+```
+File "src/cursor.c", line 1019, in APSWCursor_execute.sqlite3_prepare
+File "src/statementcache.c", line 386, in sqlite3_prepare
+apsw.SQLError: SQLError: no such table: t_storage_table_meta
+```
+追了下日志，fate_flow_sqllite.db 会生成在fate_flow_server.py 的启动目录，分task 调试时，会根据启动debug的当前目录搜索相对路径，故无法连接db，修改下如下三处db_models.py 中，将 改成绝对路径，就可以debug了
+```
+python/fate_flow/db/db_models.py
+python/fate_arch/storage/metastore/db_models.py
+python/federatedml/statistic/intersect/rsa_cache/db_models.py
+
+将self.database_connection = APSWDatabase('fate_flow_sqlite.db')
+修改为
+self.database_connection = APSWDatabase('绝对路径/fate_flow_sqlite.db')
+```
