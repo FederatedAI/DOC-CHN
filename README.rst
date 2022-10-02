@@ -31,7 +31,9 @@ Native部署
 ~~~~~~~~~~
 
 运行环境: jdk1.8+、Python3.6、python virtualenv、mysql5.6+、redis-5.0.2
-##### 单机部署
+
+单机部署
+''''''''
 
 FATE为开发人员提供了单机部署架构版本。单机部署版本可以帮助开发人员快速开发以及测试FATE。该版本支持两种类型：1）Docker；2）手动编译。
 
@@ -92,7 +94,11 @@ API 文档
 ~~~~~~~~
 
 FATE在 `doc-api <https://github.com/FederatedAI/FATE/tree/develop-1.4/doc/api/>`__ 文件夹中提供了API文档，包括 federatedml,
-eggroll, federation. ### 开发者文档
+eggroll, federation.
+
+开发者文档
+~~~~~~~~
+
 如何使用FATE开发联邦学习算法？您可以在
 `开发指南 <./Federatedml/开发指南.rst>`__ 中查看FATE开发指南。
 
