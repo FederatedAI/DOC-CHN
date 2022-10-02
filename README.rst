@@ -94,7 +94,11 @@ API 文档
 ~~~~~~~~
 
 FATE在 `doc-api <https://github.com/FederatedAI/FATE/tree/develop-1.4/doc/api/>`__ 文件夹中提供了API文档，包括 federatedml,
-eggroll, federation. ### 开发者文档
+eggroll, federation.
+
+开发者文档
+~~~~~~~~
+
 如何使用FATE开发联邦学习算法？您可以在
 `开发指南 <./Federatedml/开发指南.rst>`__ 中查看FATE开发指南。
 
